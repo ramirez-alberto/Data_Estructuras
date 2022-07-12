@@ -15,6 +15,7 @@
     public class BinarySearchTree
     {
         public Node? root;
+        private string preorder = "";
 
         public virtual Node? GenerateBST(int[] array, int start, int end)
         {
@@ -31,15 +32,16 @@
             return node;
 
         }
-        public virtual void preOrder(Node? node)
+        public virtual string preOrder(Node? node)
         {
             if (node == null)
             {
-                return;
+                return "";
             }
-            Console.Write(node.data + " ");
+            preorder += node.data + " ";
             preOrder(node.left);
             preOrder(node.right);
+            return preorder;
         }
     }
 
