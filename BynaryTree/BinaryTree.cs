@@ -1,4 +1,6 @@
-﻿namespace BinaryTree
+﻿using System.Linq;
+
+namespace BinaryTree
 {
     public class Node : IComparable
     {
@@ -32,8 +34,11 @@
         public Node? root;
         private string preorder = "";
 
-        public virtual Node? GenerateBST(int[] array, int start, int end)
+        public virtual Node? GenerateBST(int[] arr, int start, int end)
         {
+            //A simple array for learning purposes.
+            int[] array = arr.Distinct().ToArray();
+
             // Base Case
             if (start > end)
                 return null;
