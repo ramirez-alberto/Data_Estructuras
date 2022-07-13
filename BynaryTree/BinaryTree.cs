@@ -1,6 +1,6 @@
 ﻿namespace BinaryTree
 {
-    public class Node
+    public class Node : IComparable
     {
         public int data;
         public Node? left, right;
@@ -9,6 +9,21 @@
         {
             data = d;
             left = right = null;
+        }
+        int IComparable.CompareTo(object? obj)
+        {
+            if (obj == null) return 1;
+            if (obj == this) return 0;
+
+            Node? node = obj as Node;
+            if (node != null)
+            {
+                return data.CompareTo(node.data);
+            }
+            else
+            {
+                throw new ArgumentException("Object is not a Node");
+            }
         }
     }
 
