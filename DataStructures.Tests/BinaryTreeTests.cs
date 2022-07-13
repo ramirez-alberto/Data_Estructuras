@@ -3,7 +3,7 @@ using BinaryTree;
 
 namespace DataStructuresTests
 {
-    public class ValidityTests
+    public class BinaryTreeTests
     {
         [Theory]
         [InlineData("4 2 1 3 6 5 7 ", new int[] { 1, 2, 3, 4, 5, 6, 7 })]
